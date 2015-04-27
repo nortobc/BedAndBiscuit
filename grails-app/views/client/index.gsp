@@ -24,17 +24,17 @@
 			<thead>
 					<tr>
 					
-						<th><g:message code="client.questionaire.label" default="Questionaire" /></th>
-					
-						<th><g:message code="client.address.label" default="Address" /></th>
-					
-						<g:sortableColumn property="cell" title="${message(code: 'client.cell.label', default: 'Cell')}" />
-					
-						<g:sortableColumn property="email" title="${message(code: 'client.email.label', default: 'Email')}" />
-					
 						<g:sortableColumn property="firstName" title="${message(code: 'client.firstName.label', default: 'First Name')}" />
 					
 						<g:sortableColumn property="lastName" title="${message(code: 'client.lastName.label', default: 'Last Name')}" />
+					
+						<g:sortableColumn property="otherPetOwners" title="${message(code: 'client.otherPetOwners.label', default: 'Other Pet Owners')}" />
+					
+						<g:sortableColumn property="email" title="${message(code: 'client.email.label', default: 'Email')}" />
+					
+						<g:sortableColumn property="cell" title="${message(code: 'client.cell.label', default: 'Cell')}" />
+					
+						<g:sortableColumn property="homeNumber" title="${message(code: 'client.homeNumber.label', default: 'Home Number')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,17 @@
 				<g:each in="${clientInstanceList}" status="i" var="clientInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${clientInstance.id}">${fieldValue(bean: clientInstance, field: "questionaire")}</g:link></td>
+						<td><g:link action="show" id="${clientInstance.id}">${fieldValue(bean: clientInstance, field: "firstName")}</g:link></td>
 					
-						<td>${fieldValue(bean: clientInstance, field: "address")}</td>
+						<td>${fieldValue(bean: clientInstance, field: "lastName")}</td>
 					
-						<td>${fieldValue(bean: clientInstance, field: "cell")}</td>
+						<td>${fieldValue(bean: clientInstance, field: "otherPetOwners")}</td>
 					
 						<td>${fieldValue(bean: clientInstance, field: "email")}</td>
 					
-						<td>${fieldValue(bean: clientInstance, field: "firstName")}</td>
+						<td>${fieldValue(bean: clientInstance, field: "cell")}</td>
 					
-						<td>${fieldValue(bean: clientInstance, field: "lastName")}</td>
+						<td>${fieldValue(bean: clientInstance, field: "homeNumber")}</td>
 					
 					</tr>
 				</g:each>

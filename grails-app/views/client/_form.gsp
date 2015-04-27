@@ -2,6 +2,78 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'firstName', 'error')} required">
+	<label for="firstName">
+		<g:message code="client.firstName.label" default="First Name" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="firstName" pattern="${clientInstance.constraints.firstName.matches}" required="" value="${clientInstance?.firstName}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'lastName', 'error')} required">
+	<label for="lastName">
+		<g:message code="client.lastName.label" default="Last Name" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="lastName" pattern="${clientInstance.constraints.lastName.matches}" required="" value="${clientInstance?.lastName}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'otherPetOwners', 'error')} ">
+	<label for="otherPetOwners">
+		<g:message code="client.otherPetOwners.label" default="Other Pet Owners" />
+		
+	</label>
+	<g:textField name="otherPetOwners" pattern="${clientInstance.constraints.otherPetOwners.matches}" value="${clientInstance?.otherPetOwners}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'email', 'error')} required">
+	<label for="email">
+		<g:message code="client.email.label" default="Email" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="email" required="" value="${clientInstance?.email}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'cell', 'error')} required">
+	<label for="cell">
+		<g:message code="client.cell.label" default="Cell" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="cell" type="number" value="${clientInstance.cell}" required=""/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'homeNumber', 'error')} ">
+	<label for="homeNumber">
+		<g:message code="client.homeNumber.label" default="Home Number" />
+		
+	</label>
+	<g:field name="homeNumber" type="number" value="${clientInstance.homeNumber}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'workNumber', 'error')} ">
+	<label for="workNumber">
+		<g:message code="client.workNumber.label" default="Work Number" />
+		
+	</label>
+	<g:field name="workNumber" type="number" value="${clientInstance.workNumber}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'emergencyContactName', 'error')} ">
+	<label for="emergencyContactName">
+		<g:message code="client.emergencyContactName.label" default="Emergency Contact Name" />
+		
+	</label>
+	<g:textField name="emergencyContactName" value="${clientInstance?.emergencyContactName}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'questionaire', 'error')} ">
 	<label for="questionaire">
 		<g:message code="client.questionaire.label" default="Questionaire" />
@@ -26,6 +98,24 @@
 </li>
 </ul>
 
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'boarding', 'error')} ">
+	<label for="boarding">
+		<g:message code="client.boarding.label" default="Boarding" />
+		
+	</label>
+	<g:checkBox name="boarding" value="${clientInstance?.boarding}" />
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'internet', 'error')} ">
+	<label for="internet">
+		<g:message code="client.internet.label" default="Internet" />
+		
+	</label>
+	<g:checkBox name="internet" value="${clientInstance?.internet}" />
 
 </div>
 <fieldset class="embedded"><legend><g:message code="client.address.label" default="Address" /></legend>
@@ -53,7 +143,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="address.street" required="" value="${clientInstance.address?.street}"/>
-
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'address.zip', 'error')} required">
@@ -61,61 +150,69 @@
 		<g:message code="client.address.zip.label" default="Zip" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="address.zip" required="" value="${clientInstance.address?.zip}"/>
+	<g:field name="address.zip" type="number" value="${clientInstance.address?.zip}" required=""/>
 
 </div>
 </fieldset>
-<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'cell', 'error')} required">
-	<label for="cell">
-		<g:message code="client.cell.label" default="Cell" />
-		<span class="required-indicator">*</span>
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'bathingGrooming', 'error')} ">
+	<label for="bathingGrooming">
+		<g:message code="client.bathingGrooming.label" default="Bathing Grooming" />
+		
 	</label>
-	<g:field name="cell" type="number" value="${clientInstance.cell}" required=""/>
+	<g:checkBox name="bathingGrooming" value="${clientInstance?.bathingGrooming}" />
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'email', 'error')} required">
-	<label for="email">
-		<g:message code="client.email.label" default="Email" />
-		<span class="required-indicator">*</span>
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'daycare', 'error')} ">
+	<label for="daycare">
+		<g:message code="client.daycare.label" default="Daycare" />
+		
 	</label>
-	<g:textField name="email" required="" value="${clientInstance?.email}"/>
+	<g:checkBox name="daycare" value="${clientInstance?.daycare}" />
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'firstName', 'error')} required">
-	<label for="firstName">
-		<g:message code="client.firstName.label" default="First Name" />
-		<span class="required-indicator">*</span>
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'dogTraining', 'error')} ">
+	<label for="dogTraining">
+		<g:message code="client.dogTraining.label" default="Dog Training" />
+		
 	</label>
-	<g:textField name="firstName" required="" value="${clientInstance?.firstName}"/>
+	<g:checkBox name="dogTraining" value="${clientInstance?.dogTraining}" />
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'lastName', 'error')} required">
-	<label for="lastName">
-		<g:message code="client.lastName.label" default="Last Name" />
-		<span class="required-indicator">*</span>
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'droveBy', 'error')} ">
+	<label for="droveBy">
+		<g:message code="client.droveBy.label" default="Drove By" />
+		
 	</label>
-	<g:textField name="lastName" required="" value="${clientInstance?.lastName}"/>
+	<g:checkBox name="droveBy" value="${clientInstance?.droveBy}" />
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'otherOwners', 'error')} required">
-	<label for="otherOwners">
-		<g:message code="client.otherOwners.label" default="Other Owners" />
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'emergencyContactNumber', 'error')} required">
+	<label for="emergencyContactNumber">
+		<g:message code="client.emergencyContactNumber.label" default="Emergency Contact Number" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="otherOwners" required="" value="${clientInstance?.otherOwners}"/>
+	<g:field name="emergencyContactNumber" type="number" value="${clientInstance.emergencyContactNumber}" required=""/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'securityUser', 'error')} required">
-	<label for="securityUser">
-		<g:message code="client.securityUser.label" default="Security User" />
-		<span class="required-indicator">*</span>
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'other', 'error')} ">
+	<label for="other">
+		<g:message code="client.other.label" default="Other" />
+		
 	</label>
-	<g:select id="securityUser" name="securityUser.id" from="${bedandbiscuit.user.SecurityUser.list()}" optionKey="id" required="" value="${clientInstance?.securityUser?.id}" class="many-to-one"/>
+	<g:checkBox name="other" value="${clientInstance?.other}" />
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: clientInstance, field: 'referral', 'error')} ">
+	<label for="referral">
+		<g:message code="client.referral.label" default="Referral" />
+		
+	</label>
+	<g:checkBox name="referral" value="${clientInstance?.referral}" />
+
+</div>

@@ -23,6 +23,78 @@
 			</g:if>
 			<ol class="property-list client">
 			
+				<g:if test="${clientInstance?.firstName}">
+				<li class="fieldcontain">
+					<span id="firstName-label" class="property-label"><g:message code="client.firstName.label" default="First Name" /></span>
+					
+						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${clientInstance}" field="firstName"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clientInstance?.lastName}">
+				<li class="fieldcontain">
+					<span id="lastName-label" class="property-label"><g:message code="client.lastName.label" default="Last Name" /></span>
+					
+						<span class="property-value" aria-labelledby="lastName-label"><g:fieldValue bean="${clientInstance}" field="lastName"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clientInstance?.otherPetOwners}">
+				<li class="fieldcontain">
+					<span id="otherPetOwners-label" class="property-label"><g:message code="client.otherPetOwners.label" default="Other Pet Owners" /></span>
+					
+						<span class="property-value" aria-labelledby="otherPetOwners-label"><g:fieldValue bean="${clientInstance}" field="otherPetOwners"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clientInstance?.email}">
+				<li class="fieldcontain">
+					<span id="email-label" class="property-label"><g:message code="client.email.label" default="Email" /></span>
+					
+						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${clientInstance}" field="email"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clientInstance?.cell}">
+				<li class="fieldcontain">
+					<span id="cell-label" class="property-label"><g:message code="client.cell.label" default="Cell" /></span>
+					
+						<span class="property-value" aria-labelledby="cell-label"><g:fieldValue bean="${clientInstance}" field="cell"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clientInstance?.homeNumber}">
+				<li class="fieldcontain">
+					<span id="homeNumber-label" class="property-label"><g:message code="client.homeNumber.label" default="Home Number" /></span>
+					
+						<span class="property-value" aria-labelledby="homeNumber-label"><g:fieldValue bean="${clientInstance}" field="homeNumber"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clientInstance?.workNumber}">
+				<li class="fieldcontain">
+					<span id="workNumber-label" class="property-label"><g:message code="client.workNumber.label" default="Work Number" /></span>
+					
+						<span class="property-value" aria-labelledby="workNumber-label"><g:fieldValue bean="${clientInstance}" field="workNumber"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clientInstance?.emergencyContactName}">
+				<li class="fieldcontain">
+					<span id="emergencyContactName-label" class="property-label"><g:message code="client.emergencyContactName.label" default="Emergency Contact Name" /></span>
+					
+						<span class="property-value" aria-labelledby="emergencyContactName-label"><g:fieldValue bean="${clientInstance}" field="emergencyContactName"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${clientInstance?.questionaire}">
 				<li class="fieldcontain">
 					<span id="questionaire-label" class="property-label"><g:message code="client.questionaire.label" default="Questionaire" /></span>
@@ -43,6 +115,24 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${clientInstance?.boarding}">
+				<li class="fieldcontain">
+					<span id="boarding-label" class="property-label"><g:message code="client.boarding.label" default="Boarding" /></span>
+					
+						<span class="property-value" aria-labelledby="boarding-label"><g:formatBoolean boolean="${clientInstance?.boarding}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clientInstance?.internet}">
+				<li class="fieldcontain">
+					<span id="internet-label" class="property-label"><g:message code="client.internet.label" default="Internet" /></span>
+					
+						<span class="property-value" aria-labelledby="internet-label"><g:formatBoolean boolean="${clientInstance?.internet}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${clientInstance?.address}">
 				<li class="fieldcontain">
 					<span id="address-label" class="property-label"><g:message code="client.address.label" default="Address" /></span>
@@ -52,47 +142,65 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${clientInstance?.cell}">
+				<g:if test="${clientInstance?.bathingGrooming}">
 				<li class="fieldcontain">
-					<span id="cell-label" class="property-label"><g:message code="client.cell.label" default="Cell" /></span>
+					<span id="bathingGrooming-label" class="property-label"><g:message code="client.bathingGrooming.label" default="Bathing Grooming" /></span>
 					
-						<span class="property-value" aria-labelledby="cell-label"><g:fieldValue bean="${clientInstance}" field="cell"/></span>
+						<span class="property-value" aria-labelledby="bathingGrooming-label"><g:formatBoolean boolean="${clientInstance?.bathingGrooming}" /></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${clientInstance?.email}">
+				<g:if test="${clientInstance?.daycare}">
 				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="client.email.label" default="Email" /></span>
+					<span id="daycare-label" class="property-label"><g:message code="client.daycare.label" default="Daycare" /></span>
 					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${clientInstance}" field="email"/></span>
+						<span class="property-value" aria-labelledby="daycare-label"><g:formatBoolean boolean="${clientInstance?.daycare}" /></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${clientInstance?.firstName}">
+				<g:if test="${clientInstance?.dogTraining}">
 				<li class="fieldcontain">
-					<span id="firstName-label" class="property-label"><g:message code="client.firstName.label" default="First Name" /></span>
+					<span id="dogTraining-label" class="property-label"><g:message code="client.dogTraining.label" default="Dog Training" /></span>
 					
-						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${clientInstance}" field="firstName"/></span>
+						<span class="property-value" aria-labelledby="dogTraining-label"><g:formatBoolean boolean="${clientInstance?.dogTraining}" /></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${clientInstance?.lastName}">
+				<g:if test="${clientInstance?.droveBy}">
 				<li class="fieldcontain">
-					<span id="lastName-label" class="property-label"><g:message code="client.lastName.label" default="Last Name" /></span>
+					<span id="droveBy-label" class="property-label"><g:message code="client.droveBy.label" default="Drove By" /></span>
 					
-						<span class="property-value" aria-labelledby="lastName-label"><g:fieldValue bean="${clientInstance}" field="lastName"/></span>
+						<span class="property-value" aria-labelledby="droveBy-label"><g:formatBoolean boolean="${clientInstance?.droveBy}" /></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${clientInstance?.otherOwners}">
+				<g:if test="${clientInstance?.emergencyContactNumber}">
 				<li class="fieldcontain">
-					<span id="otherOwners-label" class="property-label"><g:message code="client.otherOwners.label" default="Other Owners" /></span>
+					<span id="emergencyContactNumber-label" class="property-label"><g:message code="client.emergencyContactNumber.label" default="Emergency Contact Number" /></span>
 					
-						<span class="property-value" aria-labelledby="otherOwners-label"><g:fieldValue bean="${clientInstance}" field="otherOwners"/></span>
+						<span class="property-value" aria-labelledby="emergencyContactNumber-label"><g:fieldValue bean="${clientInstance}" field="emergencyContactNumber"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clientInstance?.other}">
+				<li class="fieldcontain">
+					<span id="other-label" class="property-label"><g:message code="client.other.label" default="Other" /></span>
+					
+						<span class="property-value" aria-labelledby="other-label"><g:formatBoolean boolean="${clientInstance?.other}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clientInstance?.referral}">
+				<li class="fieldcontain">
+					<span id="referral-label" class="property-label"><g:message code="client.referral.label" default="Referral" /></span>
+					
+						<span class="property-value" aria-labelledby="referral-label"><g:formatBoolean boolean="${clientInstance?.referral}" /></span>
 					
 				</li>
 				</g:if>

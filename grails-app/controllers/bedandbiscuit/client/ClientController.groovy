@@ -9,6 +9,7 @@ import grails.transaction.Transactional
 @Secured(['ROLE_USER'])
 class ClientController {
 
+    def springSecurityService
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -26,6 +27,15 @@ class ClientController {
 
     @Transactional
     def save(Client clientInstance) {
+        //def principal = springSecurityService.principal.id
+        //String username = principal.id
+        //println principal
+        clientInstance.securityUser = springSecurityService.currentUser
+        println springSecurityService.currentUser.toString()
+        println clientInstance.securityUser
+        println clientInstance.toString()
+        //clientInstance.securityUser.id = principal
+        //println clientInstance.toString()
         if (clientInstance == null) {
             notFound()
             return
